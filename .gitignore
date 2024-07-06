@@ -2,6 +2,3 @@
 
 # Local .terraform directories
 **/.terraform/*
-
-# Ignore transient lock hcl files created by terraform apply
-hw_iv_terraform_workspace/.terraform.lock.hcl
