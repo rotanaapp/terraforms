@@ -1,0 +1,29 @@
+Usage: terraform [global options] workspace
+
+  new, list, show, select and delete Terraform workspaces.
+
+Subcommands:
+    delete    Delete a workspace
+    list      List Workspaces
+    new       Create a new workspace
+    select    Select a workspace
+    show      Show the name of the current workspace
+============================================================
+
+1 *** Create your terraform workspace
+Run: terraform workspace new dev
+
+2 *** Switched workspace
+Run: terraform workspace select dev
+
+3 *** Show workspace
+Run: terraform workspace show
+
+4 *** Terraform init for current workspace
+Run: terraform init
+
+5 *** Run terraform command plan/apply
+Run: make plan ENV=dev BACKEND=non-prod-backend
+Run: terraform apply "plans/dev.plan"
+
+

@@ -1,0 +1,12 @@
+
+AWS Terraform API Gateway with Lambda
+
+1. Create Lambda
+    - Package   (Done)
+    - Provider  (Done)
+    - IAM Role  (Done)
+    - Variable  
+    - Lambda
+
+2. Create API
+    - 
