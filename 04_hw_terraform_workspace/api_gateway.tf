@@ -75,11 +75,16 @@ resource "aws_api_gateway_integration_response" "api_integration_response_200" {
   http_method = "GET"
   status_code = aws_api_gateway_method_response.api_method_response_200[count.index].status_code
 
+  response_templates = {
+    "application/json" = ""
+  }
+
   response_parameters = {
-    "method.response.header.Content-Type"              = "integration.response.header.Content-Type"
-    "method.response.header.Strict-Transport-Security" = "max-age=63072000; includeSubDomains; preload"
+    "method.response.header.Content-Type"              = "'integration.response.header.Content-Type'"
+    "method.response.header.Strict-Transport-Security" = "'max-age=63072000; includeSubDomains; preload'"
   }
 }
+
 
 # Deployment Output
 resource "aws_api_gateway_deployment" "microservices_deployment" {
