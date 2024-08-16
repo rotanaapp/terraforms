@@ -11,7 +11,7 @@ resource "aws_lambda_function" "microservices_function_api" {
   count            = length(var.microservices_list)
   filename         = data.archive_file.lambda_zip[count.index].output_path
   function_name    = "microservices_function_api_${var.microservices_list[count.index]}"
-  role             = aws_iam_role.lambda_role.arn
+  role             = aws_iam_role.ecs_task_execution_role.arn
   handler          = "main.lambda_handler"
   source_code_hash = data.archive_file.lambda_zip[count.index].output_base64sha256
   runtime          = "python3.8"
