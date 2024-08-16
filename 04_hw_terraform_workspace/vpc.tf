@@ -26,7 +26,8 @@ resource "aws_subnet" "subnet_b" {
 
 # Create Elastic IPs
 resource "aws_eip" "nat_eip_a" {
-  vpc = true
+  # vpc = true
+  domain = "vpc"
 
   tags = {
     Name = "nat-eip-a"
@@ -34,7 +35,8 @@ resource "aws_eip" "nat_eip_a" {
 }
 
 resource "aws_eip" "nat_eip_b" {
-  vpc = true
+  # vpc = true
+  domain = "vpc"
 
   tags = {
     Name = "nat-eip-b"
