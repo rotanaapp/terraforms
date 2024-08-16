@@ -130,7 +130,7 @@ resource "aws_api_gateway_integration" "api_integration" {
   rest_api_id             = aws_api_gateway_rest_api.microservices_rest_api.id
   resource_id             = aws_api_gateway_resource.api_resource[count.index].id
   http_method             = aws_api_gateway_method.api_get_method[count.index].http_method
-  credentials             = aws_iam_role.lambda_role.arn
+  credentials             = aws_iam_role.ecs_task_execution_role.arn
   integration_http_method = "POST"
   passthrough_behavior    = "WHEN_NO_MATCH"
 
